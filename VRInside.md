@@ -78,11 +78,19 @@
 			* Pixel XL
 			* Moto Z
 	* WebVR
-		* HTC Vive
-		* Oculus Rift
-		* モバイルローエンド全般
+		* 対応HMD
+			* HTC Vive
+			* Oculus Rift
+			* モバイルローエンド全般
+		* WebVR APIによってハイエンドHMDのAPIが利用可能
+		* WebVR APIはDeveloper版のブラウザでのみ利用可能
+			* Chromium
+				* https://webvr.info/get-chrome/
+			* Firefox ナイトリービルド
+				* https://www.mozilla.org/ja/firefox/channel/desktop/#nightly
 	* AppStore, GooglePlay
 		* モバイルローエンド全般
+		* 通常のAppStoreやGooglePlayと同様のフローで申請可能
 * VRのコンテンツ開発
 	* ネイティブVRアプリケーション
 	* WebVRアプリケーション
@@ -127,7 +135,23 @@
 				* https://aframe.io/
 			* Solufa
 				* http://solufa.io/
-* 開発時の注意点
+* おすすめの開発環境
+	* ネイティブアプリ
+		* Unityを使ったアプリケーション開発
+			* シェアが大きいので情報量が多い
+			* 困ったときに質問できる場所がある
+				* Unity ユーザ助け合い所 https://www.facebook.com/groups/unityuserj/
+				* SlackのUnityユーザグループ https://unityuserj-slack-invite.herokuapp.com/
+			* アセットストアで購入できるアセットが豊富
+			* VGのVR Lab室で記事を書いているので参考にして下さい
+	* WebVR
+		* A-Frame
+			* MozillaのVRチームが開発しているOSS
+			* Web技術者が簡単に参入可能
+			* A-Frame Inspectorなどの便利ツールがある https://github.com/aframevr/aframe-inspector
+			* 2,000人が参加している slackがある https://aframe.io/community/
+			* VGのVR Lab室で(ry
+* VRコンテンツ開発時の注意点
 	* VR酔いを防ぐ
 		* FPSを高く保つ
 		* ヘッドトラッキングを止めない
@@ -142,3 +166,4 @@
 			* 後肩がこる
 		* EnvelopVRみたいな、ずっとHMDをつけていられる環境を用意したい
 			* あるいは開発者と動作確認者を分ける
+* エンジニア募集
