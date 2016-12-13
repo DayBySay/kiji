@@ -169,13 +169,33 @@
 * VRコンテンツ開発時の注意点
 	* VR酔いを防ぐ
 		* FPSを高く保つ
-		* ヘッドトラッキングを止めない
+			* 最低でも60~
+			* 体感、90あればFPSが原因の酔いは起きづらい
+			* FPSが高くてもコンテンツの作りが悪いと酔うことがある
 		* 等速移動を心がける
+			* 視点の移動に加速があると、身体感覚とのギャップで酔いやすい
+				* 人間は速度は感じないが加速度は感じる 
+				* 参考) https://www.google.com/design/spec-vr/designing-for-google-cardboard/physiological-considerations.html#physiological-considerations-use-constant-velocity
 		* 視野内で更新される情報を減らす
+			* 加速時や画面の回転時など、目に入ってくる情報が大きく更新される時に視野を狭めることでVR酔いを軽減出来るという研究結果がある
+				* 参考) http://engineering.columbia.edu/fighting-virtual-reality-sickness
 	* VRに即したインターフェイスを使う
 		* ハンドルコントローラ
+			* 主にハイエンドHMDに付属している手で利用するためのコントローラ
+			* 自身の手をVR空間上に再現できることで、直感的な動作ができる。また、酔い対策につながるかも？
+			* 対応コントローラ
+				* Vive Controller
+				* Oculus Touch
+				* Daydream Controller
 		* レティクル
+			* 視線で操作するポインター
+			* レティクルを表示することで没入感が下がったり、視覚的混乱を招く場合もあるので注意
+			* https://www.google.com/design/spec-vr/interactive-patterns/display-reticle.html
 		* ヒューズボタン
+			* タイマーを使ってアクションを行う時限式ボタン
+				* ユーザが数秒見つめたらクリックにする
+			* ヒューズボタンはVRコンテンツで市民権を得てきているが、アクションの実行まで待たされるのはストレスに繋がるので注意
+			* ヒューズボタン機能を持ったオブジェクトを複数配置する場合、ミスクリックが起きやすいので一定の間隔を空けて置くこと
 	* 開発と動作確認のサイクル
 		* HMDをつけたり外したりするのが大変
 			* 後肩がこる
