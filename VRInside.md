@@ -149,21 +149,23 @@
 			* Solufa
 				* http://solufa.io/
 * おすすめの開発環境
-	* ネイティブアプリ
-		* Unityを使ったアプリケーション開発
-			* シェアが大きいので情報量が多い
-			* 困ったときに質問できる場所がある
-				* Unity ユーザ助け合い所 https://www.facebook.com/groups/unityuserj/
-				* SlackのUnityユーザグループ https://unityuserj-slack-invite.herokuapp.com/
-			* アセットストアで購入できるアセットが豊富
-			* VGのVR Lab室で記事を書いているので参考にして下さい
-	* WebVR
-		* A-Frame
+	* 簡単に開発を初めたい人向け
+		* A-Frameを使ったWebVRアプリケーション開発
+			* ハコスコ(1,000円くらい)があれば体験可能
 			* MozillaのVRチームが開発しているOSS
 			* Web技術者が簡単に参入可能
 			* A-Frame Inspectorなどの便利ツールがある https://github.com/aframevr/aframe-inspector
 			* 2,000人が参加している slackがある https://aframe.io/community/
 			* VGのVR Lab室で(ry
+	* リッチで作り込まれたコンテンツ開発がしたい人向け
+		* Unityを使ったネイティブアプリケーション開発
+			* 特にPC向けだと利用できるポリゴン数が大きい
+			* Unityはシェアが大きいので情報量が多い
+			* 困ったときに質問できる場所がある
+				* Unity ユーザ助け合い所 https://www.facebook.com/groups/unityuserj/
+				* SlackのUnityユーザグループ https://unityuserj-slack-invite.herokuapp.com/
+			* アセットストアで購入できるアセットが豊富
+			* VGのVR Lab室で記事を書いているので参考にして下さい
 * VRコンテンツ開発時の注意点
 	* VR酔いを防ぐ
 		* FPSを高く保つ
