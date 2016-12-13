@@ -29,8 +29,8 @@
 		* MilboxTouch
 			* http://milbox.tokyo/milboxtouch/
 		* その他もろもろ
-* VRのプラットフォーム
-	* Steam
+* VRコンテンツのプラットフォーム
+	* Steam VR
 		* HTC Vive
 		* Oclus Rift
 	* Oculus Store
@@ -51,17 +51,36 @@
 * 開発環境
 	* ネイティブVR
 		* Unity
-			* C#
-			* (Unity Script)
-			* Oculus SDK
-			* Steam VR SDK
+			* 言語
+				* C#
+				* Unity Script
+			* 対応プラットフォーム
+				* Oculus
+				* HTC Vive
+				* PSVR
+				* Daydream
+				* GearVR
+				* モバイルローエンド
+			* ライブラリ
+				* Oculus SDK
+				* Steam VR SDK
+				* Google VR SDK
 		* UE4
-			* C++
-			* 筆者はUE4を試していないので割愛
+			* 言語
+				* C++
+			* 筆者はUE4を試していないのでざっくり
 		* iOS(Xcode)
-			* Google VR SDK
+			* 言語
+				* Objective-C
+				* Swift
+			* ライブラリ
+				* Google VR SDK
 		* Android(Android Studio)
-			* Google VR SDK
+			* 言語
+				* Java
+				* Kotlin
+			* ライブラリ
+				* Google VR SDK
 	* WebVR
 		* HTML, JS
 			* Three.js
