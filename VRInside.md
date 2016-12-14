@@ -13,11 +13,12 @@
 		* VRブームの火付け役
 		* 最近ハンドルコントローラの Oculus Touchをリリース
 		* Oculus社はFacebook社に20億ドルで買収されている
+		* 現状のライセンスだと商業利用が出来ない
 		* https://www3.oculus.com/en-us/rift/
 	* HTC Vive
 		* HTC社とValve社が開発
 		* ルームスケールVRをコンシューマ向けに展開した
-		* ライセンス上ロケーションベースのVR（アミューズメントとか）と相性が良い
+		* 商業利用が可能なライセンスがあるのでロケーションベースのVR（アミューズメントとか）と相性が良い
 		* https://www.vive.com/jp/
 	* PSVR
 		* 我らがSONYが開発
@@ -37,6 +38,9 @@
 		* 日本での発売時期は未定
 		* https://vr.google.com/daydream/headset/
 * モバイルローエンド
+	* Google Cardboard
+		* Google社製
+		* 世界で500万台以上売れている(2016/01時点)
 	* ハコスコ
 		* 理化学研究所発のベンチャーが開発
 		* ダンボール製、安い
