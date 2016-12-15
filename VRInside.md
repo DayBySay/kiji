@@ -21,12 +21,12 @@
 	* モバイル
 		* モバイルハイエンド
 		* モバイルローエンド
+	* プラットフォーム
 * VRコンテンツ開発環境
 	* 主流の開発環境
 	* おすすめの開発環境
 		* 気軽に楽しめるコンテンツを作りたい人向け
-		* 凝ったゲームなどを作ってみたい人向け
-	* A-FrameでVRアプリを作ってみる
+		* A-FrameでVRアプリを作ってみる
 * コンテンツ開発時の注意点
 	* VR酔いについて
 	* インタフェイスについて
@@ -41,6 +41,25 @@
 * 始めようVRコンテンツ開発〜概要と開発環境編〜
 
 ## コンテンツ
+### VRコンテンツの概要
+* VRコンテンツとは
+	* 狭義のVRとして、HMDを利用してデジタルコンテンツの中に入りこんだ体験が出来るものとする
+	* 大きく分けてエンタメと非エンタメ
+	* エンタメ
+		* ゲーム
+		* ライブイベント
+		* ビデオ
+	* 非エンタメ
+		* ヘルスケア
+		* 教育
+		* 不動産、など
+* 事例紹介
+	* ゲーム
+	* ライブイベント
+	* ヘルスケア
+	* いろいろな分野で価値を発揮する可能性
+* HMDで使えるコンテンツを開発する必要がある
+
 ###  世の中のHMDについて
 * ハイエンド
 	* Oculus Rift
@@ -201,15 +220,6 @@
 		* A-Frame Inspectorなどの便利ツールがある https://github.com/aframevr/aframe-inspector
 		* 2,000人が参加している slackがある https://aframe.io/community/
 		* VGのVR Lab室で(ry
-* リッチで作り込まれたコンテンツ開発がしたい人向け
-	* Unityを使ったネイティブアプリケーション開発
-		* 特にPC向けだと利用できるポリゴン数が大きい
-		* Unityはシェアが大きいので情報量が多い
-		* 困ったときに質問できる場所がある
-			* Unity ユーザ助け合い所 https://www.facebook.com/groups/unityuserj/
-			* SlackのUnityユーザグループ https://unityuserj-slack-invite.herokuapp.com/
-		* アセットストアで購入できるアセットが豊富
-		* VGのVR Lab室で記事を書いているので参考にして下さい
 
 ### VRコンテンツ開発時の注意点
 * VR酔いを防ぐ
@@ -246,6 +256,16 @@
 		* 後肩がこる
 	* EnvelopVRみたいな、ずっとHMDをつけていられる環境を用意したい
 		* あるいは開発者と動作確認者を分ける
+* VRコンテンツ開発時に参照するリソースについて
+	* Unity https://docs.unity3d.com/ja/current/Manual/index.html
+	* A-Frame https://aframe.io/
+	* GoogleVR https://vr.google.com/daydream/developers/
+	* @k0rinさん https://framesynthesis.jp/
+	* ザバイオーネさん http://zabaglione.info/
+	* pafuhanaさん http://pafuhana1213.hatenablog.com/
+	* needleさん http://www.heistak.com/
+	* GOROmanさん https://twitter.com/GOROman
+	* かおるんさん http://www.naturalsoftware.jp/
 
 ### まとめ
 * エンジニア募集!!!
