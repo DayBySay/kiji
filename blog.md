@@ -140,13 +140,19 @@ A-FrameはWebVRアプリケーション開発を支援するため、Mozilla VR�
 
 JSでの3Dのコンテンツ開発を可能とする*Three.js*をベースとし、ヘッドトラッキングや両眼立体視を簡単に実現できる機能などが追加されています。
 
+また、Oculus RiftやHTC ViveなどのハイエンドHMDや、ハンドコントローラなども簡単に扱えるようになっており、色々なプラットフォームに対応できるのも魅力の一つです。
+
 <iframe src="https://aframe.io/examples/showcase/helloworld/"></iframe>
 
-A-Frameの使い方に関しては[公式のチュートリアル](https://aframe.io/docs/0.3.0/introduction/getting-started.html)にまとまっているのでご参照下さい。
+A-Frameの使い方に関しては[公式のチュートリアル](https://aframe.io/docs/0.3.0/introduction/getting-started.html)にきれいにまとまっているので、そちらをご参照下さい。
 
-[A-Frame Boilerplate](https://github.com/DayBySay/aframe-boilerplate)
+ちなみにA-Frameを用いたアプリ開発環境の構築は[A-Frame Boilerplate](https://github.com/DayBySay/aframe-boilerplate)を利用することで簡単に実現できます。
 
-
+```
+$ git clone https://github.com/aframevr/aframe-boilerplate.git
+$ cd aframe-boilerplate && rm -rf .git && npm install && npm start
+$ open http://localhost:3000/
+```
 
 # コンテンツ開発時の注意点
 VRコンテンツ開発時に特に注意したいポイントは下記になります。
