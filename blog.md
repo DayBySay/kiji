@@ -131,10 +131,22 @@ VRコンテンツの開発環境は、先程お話した*コンテンツのタ�
 それぞれ他にも特性を持っておりますが、特にこだわりがなければ情報が豊富で有料のアセット購入が簡単に出来る*Unity*の利用をお勧めします。
 
 ## Webアプリケーション
+HTML + CSS + JSでの開発が可能です。お好みのエディタで開発が可能です。ちなみに筆者はVimで開発しています。
 
-
-## おすすめの開発環境
+## おすすめの開発環境と構築方法
 とりあえずVR開発を始めるに当たって、筆者のお勧めは*A-Frame + Google Cardboardを使ったWebVR開発*です。
+
+A-FrameはWebVRアプリケーション開発を支援するため、Mozilla VRチームが中心となって開発しているOSSのライブラリです。
+
+JSでの3Dのコンテンツ開発を可能とする*Three.js*をベースとし、ヘッドトラッキングや両眼立体視を簡単に実現できる機能などが追加されています。
+
+<iframe src="https://aframe.io/examples/showcase/helloworld/"></iframe>
+
+A-Frameの使い方に関しては[公式のチュートリアル](https://aframe.io/docs/0.3.0/introduction/getting-started.html)にまとまっているのでご参照下さい。
+
+[A-Frame Boilerplate](https://github.com/DayBySay/aframe-boilerplate)
+
+
 
 # コンテンツ開発時の注意点
 VRコンテンツ開発時に特に注意したいポイントは下記になります。
@@ -146,8 +158,6 @@ VRコンテンツ開発時に特に注意したいポイントは下記になり
 ## VR酔いについて
 
 ## インタフェイスについて
-
-## 開発と動作確認のサイクル
 
 ## VRコンテンツ開発時に参照するリソースについて
 
