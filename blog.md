@@ -1,25 +1,21 @@
 こんにちは。株式会社VOYAGE GROUP VR LAB室の[@daybysay](https://twitter.com/daybysay) と申します。普段はインターネット広告のSDKエンジニアをしております。
 
-今年の10月にVR LAB室というVRコンテンツ開発にトライしていく事業室を社内立ち上げ、そちらでちょろちょろととアプリケーション開発をやっています。
+今年の10月にVR LAB室を社内で立ち上げ、そちらでちょろちょろとVRアプリの開発をやっています。
 
-この度、ご縁がありVR Insideさんに寄稿する機会を頂けたので、自分が勉強してきたことのアウトプットをしたいと思います。
-
-今回はVRに興味はあるがまだ触ったことは無いよ〜というエンジニアの方向けに、アプリケーションが開発できる**HMDの特徴**、**VRアプリケーションの種類**、と**WebVRアプリケションの開発方法**についてまとめました！
+この度、ご縁がありVR Insideさんに寄稿する機会を頂けたので、VRアプリが開発できる**HMDの種類と特徴**、**VRアプリケーションの種類と特徴**、**WebVRアプリの開発方法**についてまとめました！
 
 # 目次
 
 [:contents]
 
-# VRアプリケーション開発が出来るHMDについて
+# VRアプリケーション開発が出来るHMD(Head Mounted Display)について
 
 ![まとめ](./images/matome.png)
 
-2016年末現在、アプリケーション開発が出来るHMDは下記2つに分類できます。
+2016年末現在、VRアプリケーション開発が出来るHMDは下記2つに大別できます。
 
 1. ハイエンドHMD
 1. モバイルHMD
-
-また、モバイルHMDの中でもハイエンドとローエンドで分かれています。
 
 ## ハイエンドHMD
 ![image](./images/high.jpg)
@@ -48,6 +44,8 @@
 
 しかし、スマートフォンユーザならHMDを買うだけでVRコンテンツを体験できるので、体験までのハードルが低いです。((ローエンドに限る))
 
+また、モバイルHMDの中でもハイエンドとローエンドで分かれています。
+
 **良い点**
 
 * 安いHMD + お手持ちのスマホでコンテンツが体験できるので、コンテンツ体験までのハードルが低い(**1,000円~**)
@@ -70,58 +68,63 @@
 # VRアプリケーションの種類
 ![image](./images/app.jpg)
 
-VRアプリケーションのタイプは2種類で、**ネイティブVRアプリケーション**と**WebVRアプリケーション**があります。
+VRアプリケーションのタイプは2種類で、**ネイティブ**と**Web**があります。
 
-## ネイティブVRアプリケーション
-ネイティブVRアプリケーションは下記のような特徴を持っています
+## ネイティブ
+ネイティブVRアプリは下記のような特徴を持っています
 
-* WindowsやMacOS、GearVRやDaydreamなどのプラットフォーム経由でアプリケーションをインストールして利用できるネイティブアプリケーション
+* WindowsやMacOS、GearVRやDaydreamなどのアプリストア経由でインストールして利用できるアプリケーション
 * Unity、 UE4などのゲームエンジンがVR対応をしており、ゲーム開発をされていた人が参入しやすい
-* Oculus RiftやHTC Viveなどのベンダから公式SDKが提供されている
+* Oculus RiftやHTC ViveなどのベンダからHMD用の公式SDKが提供されている
 * WebVRに比べてリッチで作り込まれた表現がし易いのと、（多くの場合）Wi-Fiか有線が前提なのでネットワークの制約を気にしなくても良い
 
 いま世の中に存在するVRコンテンツの殆どはネイティブで作られています。
 
-元々UnityやUE4などでゲーム開発をしていた人はすぐに初められるので、ゲームコンテンツや
+元々UnityやUE4などでゲーム開発をしていた人はすぐに初められるので、ゲームエンジニアの方にお勧めです。
 
-### ネイティブVRアプリケーションの開発環境
+### ネイティブの開発環境
 ![image](./images/native.png)
 ネイティブのVRコンテンツ開発は、多くの場合下記2つのゲームエンジンで行われています。
 
-1. [UNREAL ENGINE4(UE4)](https://www.unrealengine.com/ja/what-is-unreal-engine-4)
-1. [Unity](https://unity3d.com/jp/)
+* [UNREAL ENGINE4(UE4)](https://www.unrealengine.com/ja/what-is-unreal-engine-4)
+* [Unity](https://unity3d.com/jp/)
 
 それぞれ特性がありますが、**モバイルに強く情報量が多い**Unityと、**リアルなグラフィックに強く、ブループリントという使いやすいビジュアルスクリプト言語を擁する**UE4というのがざっくりした特徴です。
 
-ちなみに筆者がネイティブVRアプリケーションを開発する際はは基本的にUnityを使っています。(UE4はほぼ使ったことがありません
+ちなみに筆者がネイティブを開発する際はは基本的にUnityを使っており、UE4をほぼ触っていないため、ここでは紹介程度とさせていただきます。
 
-Unityにおいては[マニュアル](https://docs.unity3d.com/ja/current/Manual/index.html)に基本的な事は書いてありますし、何より世の中に情報が多いのであまりゲーム開発経験が無かった筆者も簡単に開発を始めることが出来ました。
+### UnityによるネイティブVRアプリ開発
+UnityにおけるVRアプリケーション開発は、基本的にベンダの提供しているSDKを利用した方法をとります。
 
-UE4も同様にマニュアルはしっかりしているので、[VR開発について記載も厚いので](https://docs.unrealengine.com/latest/JPN/Platforms/VR/index.html)、折を見て試してみようかと思っています。
+例えばHTC Vive向けには[SteamVR SDK](https://www.assetstore.unity3d.com/jp/#!/content/32647)がAssetStore((Unityの開発に使えるアセットが売買出来るプラットフォーム))上に存在しており、そちらを利用して行います。
 
-## WebVRアプリケーション
-下記のような特徴を持っています
+HTC Vive向けの開発については[弊社ブログの過去記事](http://vr-lab.voyagegroup.com/entry/2016/09/28/120925)で公開しているので、そちらをご参照下さい。
+
+また、モバイルのGoogleCardboardやDaydream向けの開発では[Google VR SDK](https://developers.google.com/vr/unity/)を利用します。
+
+こちらも[弊社ブログの過去記事](http://vr-lab.voyagegroup.com/entry/2016/11/07/235026)で公開しているので、そちらをご参照下さい。
+
+## WebVR
+WebVRアプリは下記のような特徴を持っています
 
 * Web上にホスティングされ、ブラウザでURLにアクセスするだけで簡単に体験できるアプリケーション
-* WebVR APIを利用し、HMDの情報を扱える(WebVR APIが使えなくてもVRコンテンツ開発は可能)
+* 基本的には[WebVR API](https://github.com/w3c/webvr)を利用して開発を行う
 * WebVR APIはHMD本体、HMD用カメラ(ポジショントラッキング)とブラウザの間をつなぐAPIで、Web GL、Web Audio、GamePad APIと組み合わせてアプリケーションを開発する
 
-WebVRアプリケーションは基本的に[WebVR API](https://github.com/w3c/webvr) を利用して開発を行います。
+WebVR APIを正式実装しているブラウザはまだ存在せず、現在[W3CにWebVR APIのドラフトが出ている段階](https://w3c.github.io/webvr/)です。
 
-WebVR APIを正式実装しているブラウザはまだ存在せず、現在[W3Cにドラフトが出ている段階](https://w3c.github.io/webvr/)です。
-
-現在では多くのコンテンツがネイティブアプリケーションとして作られていますが、開発環境やブラウザのWebVR API対応によって、今後はWebアプリケーションも増えてくると予想されます。
+現在は多くのコンテンツがネイティブアプリケーションで作られていますが、開発環境やブラウザのWebVR API対応によって、今後はWebアプリケーションも増えてくると予想されます。
 
 ちなみにブラウザのWebVR API対応状況に関しては [Is WebVR Ready?](https://iswebvrready.org/) で確認が可能です。
 
-### WebVRアプリケーションの開発環境
+### WebVRの開発環境
 ![image](./images/web.png)
 
-WebVRアプリケーションは、当然HTML + CSS + JSでの開発が可能です。
+Webは、当然HTML + CSS + JSでの開発が可能です。
 
-また、WebVRアプリケーション開発支援のライブラリが存在しており、それらを活用すると簡単にWebVRアプリケーションを作ることが出来ます。
+また、WebVR開発支援のライブラリが存在しており、それらを活用すると簡単にWebVRアプリ開発が可能です。
 
-現状利用可能なライブラリは下記です。
+現在WebVRで利用可能なライブラリは下記です。
 
 * [WebVR Boilerplate](https://github.com/borismus/webvr-boilerplate)
 * [React VR](https://github.com/facebookincubator/react-vr)
@@ -129,15 +132,19 @@ WebVRアプリケーションは、当然HTML + CSS + JSでの開発が可能で
 
 これらはJSの3Dライブラリである[Three.js](https://github.com/mrdoob/three.js/)をベースに実装されています。
 
-これらのライブラリの中にがWebVR APIのラッパーが存在するので、Oculus RiftやHTC ViveなどのハイエンドHMD、ハンドコントローラなどの情報が簡単に扱えるようになっています。
+ライブラリ内にWebVR APIのラッパーが存在するので、Oculus RiftやHTC ViveなどのハイエンドHMD、ハンドコントローラなどの情報も簡単に扱うことが可能です。
 
-元々Three.jsベースでコンテンツを開発されている場合、WebVR Boilerplateを利用すると簡単にVR対応が可能です。
+例えば、A-Frameで作られている[A-Painter](https://aframe.io/a-painter/)というアプリは、HTC ViveでリリースされているTiltBrushのようなお絵かきアプリを作ることも出来ます。
+
+![A-paniter](https://blog.mozvr.com/content/images/2016/09/apainter_painting.gif)
+
+元々Three.jsベースでコンテンツを開発している場合、WebVR Boilerplateを利用すると簡単にVR対応が可能です。
 
 React VRは先日の[Oculus Connectで発表された](https://techcrunch.com/2016/10/06/oculus-webvr/)ライブラリで、現時点ではまだプレリリース状態です。
 
 [React Native](https://facebook.github.io/react-native/)をベースに作られており、JSの独自拡張構文である[JSX](http://facebook.github.io/jsx/)を利用した開発が可能になっています。
 
-A-FrameはWebVRアプリケーション開発を支援するため、Mozilla VRチームが中心となって開発しているOSSのライブラリで、HTMLでVRアプリケーションを作成するためのオープンソースのWebVRフレームワークです。
+A-FrameはWeb開発を支援するため、Mozilla VRチームが中心となって開発しているOSSのライブラリで、HTMLでVRアプリケーションを作成するためのオープンソースのWebVRフレームワークです。
 
 独自のHTML拡張構文が用意されているのと、[A-Frame Inspector](https://github.com/aframevr/aframe-inspector)よいうビジュアルエディタが用意されているのが特徴です。
 
@@ -147,8 +154,8 @@ A-FrameはWebVRアプリケーション開発を支援するため、Mozilla VR�
 
 開発を始めるに当たって、筆者のお勧めは**A-Frame + [A-Frame-Boilerplate](https://github.com/aframevr/aframe-boilerplate)を使った開発**です。
 
-# A-Frame + A-Frame Boilerplateを使ってWebVRアプリケーションを開発する
-さっそくですが、A-Frameを利用したWebVRアプリケーションを作ってみたいと思います。
+# A-Frame + A-Frame Boilerplateを使ってWebを開発する
+さっそくですが、A-Frameを利用したWebを作ってみたいと思います。
 
 今回は`git`と`npm`を利用するので、それらの環境を用意して下さい。
 
@@ -196,7 +203,7 @@ npm run deploy
 
 これで開発 -> スマホで動作確認のサイクルを回せるようになりました！
 
-### A-Frameで文字を表示する
+## A-Frameで文字を表示する
 せっかくなので少し実装をしてみましょう。
 
 今回は `Hello world` という文字を表示するところまでやってみたいと思います。
