@@ -42,22 +42,22 @@
 
 モバイルHMDは、スマートフォン + HMDで利用できる端末で、ハイエンドのHMDに比べるとインタラクションの種類が限定されてしまったり、扱えるポリゴン数が少ないなど、制約が多いです。
 
-しかし、スマートフォンユーザならHMDを買うだけでVRコンテンツを体験できるので、体験までのハードルが低いです。((ローエンドに限る))
+しかし、スマートフォンユーザなら安価なHMDを買うだけでVRコンテンツを体験できるので、体験までのコストは低いです。((Galaxy, Pixelユーザ以外はローエンドに限る))
 
-また、モバイルHMDの中でもハイエンドとローエンドで分かれています。
+また、モバイルHMDの中でもハイエンドとローエンドで分かれており、モバイルハイエンドのHMDは没入感が高いコンテンツが結構あります。
 
 **良い点**
 
 * 安いHMD + お手持ちのスマホでコンテンツが体験できるので、コンテンツ体験までのハードルが低い(**1,000円~**)
-* スマホとHMDで動作するのでハイエンドHMDと違って場所を選ばない
+* HMD + スマホで動作するのでハイエンドHMDと違って場所を選ばない
 * (モバイルハイエンド) ハイエンドHMDには劣るものの、ユーザの色々な入力を受けるインターフェイスが備わっている
 * (モバイルローエンド) 既存のストアを利用してアプリを配布できる為、潜在的なユーザが多い((例えばGoogleCardboardのユーザは今年の1月時点で[世界で500万以上](https://blog.google/products/google-vr/unfolding-virtual-journey-cardboard/)。ちなみにGearVRのMAUは100万人以上と[公式に発表されている](http://fortune.com/2016/05/11/oculus-samsung-gear-1-million-users/)))
 
 **悪い点**
 
-* 現状のモバイルHMDだと**ポジショントラッキングができない**ので、コンテンツ内での移動に制約がある((Tango + Daydream Readyの端末が出ればポジトラ可能になりそうだが・・))
-* (モバイルローエンド) 多くの場合ハンドコントローラがないので、コンテンツ内のインタフェイスが視線ベースになることが多く、疲れやすい
-* (モバイルローエンド) スマホのスペックによって扱えるポリゴン数にかなり差があるので調整が大変
+* 現状のモバイルHMDだと**ポジショントラッキングができない**ので、ユーザの自身の現実世界での移動をコンテンツに反映するのが難しい((加速度や角速度センサーの値を使えば多少は可能である))
+* (モバイルローエンド) 多くの場合ハンドコントローラがないので、コンテンツ内のインタフェイスが視線ベースになることが多く、目と首が疲れやすい
+* (モバイルローエンド) スマホのスペックによって扱えるポリゴン数などにかなり差があるので調整が大変
 
 モバイルHMDは場所に関係なく使えるので、例えばNetflixやYoutubeのような動画を見るコンテンツや、リラクゼーション系など、頭だけで使えて動きが少ないコンテンツと相性が良いです。
 
@@ -91,7 +91,7 @@ VRアプリケーションのタイプは2種類で、**ネイティブ**と**We
 
 それぞれ特性がありますが、**モバイルに強く情報量が多い**Unityと、**リアルなグラフィックに強く、ブループリントという使いやすいビジュアルスクリプト言語を擁する**UE4というのがざっくりした特徴です。
 
-ちなみに筆者がネイティブを開発する際はは基本的にUnityを使っており、UE4をほぼ触っていないため、ここでは紹介程度とさせていただきます。
+ちなみに私がネイティブを開発する際はは基本的にUnityを使っており、UE4をほぼ触っていないため、ここでは紹介程度とさせていただきます。
 
 ### UnityによるネイティブVRアプリ開発
 ![unity](https://cdn-ak.f.st-hatena.com/images/fotolife/D/DayBySay/20161108/20161108002853.png)
@@ -112,7 +112,7 @@ WebVRアプリは下記のような特徴を持っています
 * 基本的には[WebVR API](https://github.com/w3c/webvr)を利用して開発を行う
 * WebVR APIはHMD本体、HMD用カメラ(ポジショントラッキング)とブラウザの間をつなぐAPIで、Web GL、Web Audio、GamePad APIと組み合わせてアプリケーションを開発する
 
-WebVR APIを正式実装しているブラウザはまだ存在せず、現在[W3CにWebVR APIのドラフトが出ている段階](https://w3c.github.io/webvr/)です。
+WebVR APIを正式実装しているブラウザはまだ存在せず、[W3CにWebVR APIのドラフトが出ている段階](https://w3c.github.io/webvr/)です。
 
 現在は多くのコンテンツがネイティブアプリケーションで作られていますが、開発環境やブラウザのWebVR API対応によって、今後はWebアプリケーションも増えてくると予想されます。
 
@@ -135,25 +135,35 @@ Webは、当然HTML + CSS + JSでの開発が可能です。
 
 ライブラリ内にWebVR APIのラッパーが存在するので、Oculus RiftやHTC ViveなどのハイエンドHMD、ハンドコントローラなどの情報も簡単に扱うことが可能です。
 
-例えば、A-Frameで作られている[A-Painter](https://aframe.io/a-painter/)というアプリは、HTC ViveでリリースされているTiltBrushのようなお絵かきアプリを作ることも出来ます。
+例えば、A-Frameで作られている[A-Painter](https://aframe.io/a-painter/)というアプリは、HTC ViveでリリースされているTiltBrushのようなお絵かきアプリを作ることも出来ます！
 
 ![A-paniter](https://blog.mozvr.com/content/images/2016/09/apainter_painting.gif)
 
-元々Three.jsベースでコンテンツを開発している場合、WebVR Boilerplateを利用すると簡単にVR対応が可能です。
+元々Three.jsベースでコンテンツを開発している場合、WebVR Boilerplateを利用すると簡単にVR対応が可能ですが、私は触ったことがないのでこちらも名前の紹介だけとさせていただきます。
 
-React VRは先日の[Oculus Connectで発表された](https://techcrunch.com/2016/10/06/oculus-webvr/)ライブラリで、現時点ではまだプレリリース状態です。
+### React VR
+React VRは先日の[Oculus Connectで発表された](https://techcrunch.com/2016/10/06/oculus-webvr/)Facebook謹製のライブラリで、現時点ではまだプレリリース状態です。
 
 [React Native](https://facebook.github.io/react-native/)をベースに作られており、JSの独自拡張構文である[JSX](http://facebook.github.io/jsx/)を利用した開発が可能になっています。
 
+React VRについての詳細は[公式のブログ](https://developer.oculus.com/blog/introducing-the-react-vr-pre-release/)に書かれております。
+
+React VR自体は[こちら](https://s3.amazonaws.com/static.oculus.com/reactvr/React_VR_Prerelease.zip)から直接ダウンロードして利用することが出来ます。
+
+少しだけ触りましたが、JSXを初めて触ったのでちょっと戸惑いました。また、初回のアクセス時にreact native packerが行うアプリのビルドに結構時間がかかるので、お手軽感に欠けるかなーと思いました。
+
+このあたりはReactやReact VRの勉強をもう少ししてから、また記事にしたいと思います。
+
+### A-Frame
 A-FrameはWeb開発を支援するため、Mozilla VRチームが中心となって開発しているOSSのライブラリで、HTMLでVRアプリケーションを作成するためのオープンソースのWebVRフレームワークです。
 
-独自のHTML拡張構文が用意されているのと、[A-Frame Inspector](https://github.com/aframevr/aframe-inspector)よいうビジュアルエディタが用意されているのが特徴です。
+独自のHTML拡張構文が用意されているのと、[A-Frame Inspector](https://github.com/aframevr/aframe-inspector)というビジュアルエディタが用意されているのが特徴です。
 
 [先日リリースされたA-Frame v0.4.0](https://aframe.io/blog/aframe-v0.4.0/)では、新たに[A-Frame Registory](https://aframe.io/aframe-registry/)が公開されました。
 
-これはUnityで言うところのAssetStoreの様なものであり、Registoryに登録されているコンポーネントはInspectorから直接利用出来るという素晴らしい機能を備えています。
+これはUnityで言うところのAssetStoreの様なものであり、Registoryに登録されているコンポーネントを上記のInspectorから直接利用出来るという便利な機能を備えています。
 
-開発を始めるに当たって、筆者のお勧めは**A-Frame + [A-Frame-Boilerplate](https://github.com/aframevr/aframe-boilerplate)を使った開発**です。
+WebVRアプリ開発を始めるに当たって、一番お勧めしたいのは**A-Frame + [A-Frame-Boilerplate](https://github.com/aframevr/aframe-boilerplate)**です。
 
 # A-Frame + A-Frame Boilerplateを使ってWebを開発する
 さっそくですが、A-Frameを利用したWebを作ってみたいと思います。
