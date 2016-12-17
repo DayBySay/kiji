@@ -80,16 +80,13 @@ VRアプリケーションのタイプは2種類で、**ネイティブVRアプ�
 
 元々UnityやUE4などでゲーム開発をしていた人はすぐにトライできるのが良いです。
 
-### ネイティブアプリケーションの開発環境
+### ネイティブVRアプリケーションの開発環境
 ![image](./images/4.png)
 ネイティブのVRコンテンツ開発は、多くの場合下記2つのゲームエンジンで行われています。
 
-1. [Unity](https://unity3d.com/jp/)
 1. [UNREAL ENGINE4(UE4)](https://www.unrealengine.com/ja/what-is-unreal-engine-4)
+1. [Unity](https://unity3d.com/jp/)
 
-ざっくりとした紹介をすると、簡単に使えて情報量が多いUnityと、リアルなグラフィックの作り込みが出来るUE4といった印象です。
-
-### おすすめの開発環境と構築方法
 それぞれ他にも特性を持っておりますが、特にこだわりがなければ情報が豊富で有料のアセット購入が簡単に出来る**Unity**の利用をお勧めします。
 
 Unityの詳細に関しては[公式のイントロダクション](https://unity3d.com/jp/learn)をご参照下さい。
@@ -110,7 +107,7 @@ WebVR APIはHMDとカメラ、現在[W3Cにドラフトが出ている段階](ht
 
 ブラウザのWebVR API対応状況に関しては [Is WebVR Ready?](https://iswebvrready.org/) で確認が可能です。
 
-### Webアプリケーションの開発環境
+### WebVRアプリケーションの開発環境
 ![image](./images/5.png)
 
 既存の多くのコンテンツはネイティブで作られていますが、最近[モバイルのChromeベータ版がWebVR APIに対応をする](http://jp.techcrunch.com/2016/12/14/20161213google-introduces-webvr-api-to-latest-chrome-beta-on-android/)など、ブラウザでもVRアプリケーションを実行する環境が徐々に整備されています。
@@ -143,11 +140,9 @@ A-FrameはWebVRアプリケーション開発を支援するため、Mozilla VR�
 
 これはUnityで言うところのAssetStoreの様なものであり、Registoryに登録されているコンポーネントはInspectorから直接利用出来るという素晴らしい機能を備えています。
 
-### おすすめの開発環境と構築方法
 とりあえずVR開発を始めるに当たって、筆者のお勧めは**A-Frame + [A-Frame-Boilerplate](https://github.com/aframevr/aframe-boilerplate)を使ったWebVR開発**です。
 
 # A-Frame Boilerplateを使ってWebVRアプリケーションを開発する
-
 せっかくなので、A-Frameを利用してWebVRアプリケーションを作ってみたいと思います。
 
 `git`と`npm`を利用するので、それぞれ使えるようにインストールをしておいて下さい。
