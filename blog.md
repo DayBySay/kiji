@@ -160,7 +160,7 @@ cd aframe-boilerplate && rm -rf .git && npm install
 
 この状態で`npm start`を実行すると、ブラウザが開きA-Frameアプリケーションが表示されます。
 
-![image](./images/aframe-hello.jpg)
+![image](./images/aframe-hello.png)
 
 これでローカルの開発環境は準備OKです。簡単！
 
