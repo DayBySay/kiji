@@ -2,7 +2,7 @@
 
 今年の10月にVR LAB室を社内で立ち上げ、そちらでちょろちょろとVRアプリの開発をやっています。
 
-この度、ご縁がありVR Insideさんに寄稿する機会を頂けたので、VRアプリが開発できる**HMDの種類と特徴**、**VRアプリケーションの種類と特徴**、**WebVRアプリの開発方法**についてまとめました！
+この度、ご縁がありVR Insideさんに寄稿する機会を頂けたので、VRアプリが開発できる**HMDの種類と特徴**、**VRアプリケーションの種類と特徴**、**VRアプリの開発方法**についてまとめました！
 
 # 目次
 
@@ -10,7 +10,7 @@
 
 # VRアプリケーション開発が出来るHMD(Head Mounted Display)について
 
-![まとめ](./images/matome.png)
+[f:id:DayBySay:20161217233003p:plain]
 
 2016年末現在、VRアプリケーション開発が出来るHMDは下記2つに大別できます。
 
@@ -18,7 +18,7 @@
 * モバイルHMD
 
 ## ハイエンドHMD
-![image](./images/high.jpg)
+[f:id:DayBySay:20161217232944j:plain]
 
 ハイエンドHMDは、いわゆる**ゲーミングPC**などの据え置き型の端末とセットで使うHMDで、次のような特徴があります。
 
@@ -35,10 +35,11 @@
 
 3Dお絵かきアプリである[TiltBrush](https://www.tiltbrush.com/)や、VR空間で他のユーザと遊べる[Toybox](https://www.oculus.com/experiences/rift/1083042371786607/)など、全身を使う動きのあるコンテンツとの相性が良いです。
 
+**TiltBrush**
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TckqNdrdbgk" frameborder="0" allowfullscreen></iframe>
 
 ## モバイルHMD
-![image](./images/mobile.jpg)
+[f:id:DayBySay:20161217233011j:plain]
 
 モバイルHMDは、スマートフォン + HMDで利用できる端末で、ハイエンドのHMDに比べるとインタラクションの種類が限定されてしまったり、扱えるポリゴン数が少ないなど、制約が多いです。
 
@@ -61,12 +62,13 @@
 
 モバイルHMDは場所に関係なく使えるので、例えばNetflixやYoutubeのような動画を見るコンテンツや、リラクゼーション系など、頭だけで使えて動きが少ないコンテンツと相性が良いです。
 
+**Youtube VR**
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ROzDHcayl-k" frameborder="0" allowfullscreen></iframe>
 
 これら特性をしっかり把握した上で、どのHMD向けにコンテンツを提供していくか検討をするのが重要です。
 
 # VRアプリケーションの種類
-![image](./images/app.jpg)
+[f:id:DayBySay:20161217232907j:plain]
 
 VRアプリケーションのタイプは2種類で、**ネイティブ**と**WebVR**があります。
 
@@ -83,7 +85,8 @@ VRアプリケーションのタイプは2種類で、**ネイティブ**と**We
 元々UnityやUE4などでゲーム開発をしていた人はすぐに初められるので、ゲームエンジニアの方にお勧めです。
 
 ### ネイティブの開発環境
-![image](./images/native.png)
+[f:id:DayBySay:20161217233044p:plain]
+
 ネイティブのVRコンテンツ開発は、多くの場合下記2つのゲームエンジンで行われています。
 
 * [UNREAL ENGINE4(UE4)](https://www.unrealengine.com/ja/what-is-unreal-engine-4)
@@ -94,7 +97,6 @@ VRアプリケーションのタイプは2種類で、**ネイティブ**と**We
 ちなみに私がネイティブを開発する際はは基本的にUnityを使っており、UE4をほぼ触っていないため、ここでは紹介程度とさせていただきます。
 
 ### UnityによるネイティブVRアプリ開発
-![unity](https://cdn-ak.f.st-hatena.com/images/fotolife/D/DayBySay/20161108/20161108002853.png)
 UnityにおけるVRアプリケーション開発は、基本的にベンダの提供しているSDKを利用した方法をとります。
 
 例えばHTC Vive向けには[SteamVR SDK](https://www.assetstore.unity3d.com/jp/#!/content/32647)がAssetStore((Unityの開発に使えるアセットが売買出来るプラットフォーム))上に存在しており、そちらを利用して行います。
@@ -119,9 +121,9 @@ WebVR APIを正式実装しているブラウザはまだ存在せず、[W3CにW
 ちなみにブラウザのWebVR API対応状況に関しては [Is WebVR Ready?](https://iswebvrready.org/) で確認が可能です。
 
 ### WebVRの開発環境
-![image](./images/web.png)
+[f:id:DayBySay:20161217233050p:plain]
 
-Webは、当然HTML + CSS + JSでの開発が可能です。
+当然ですが、WebVRはHTML + CSS + JSでの開発が可能です。
 
 また、WebVR開発支援のライブラリが存在しており、それらを活用すると簡単にWebVRアプリ開発が可能です。
 
@@ -135,11 +137,11 @@ Webは、当然HTML + CSS + JSでの開発が可能です。
 
 ライブラリ内にWebVR APIのラッパーが存在するので、Oculus RiftやHTC ViveなどのハイエンドHMD、ハンドコントローラなどの情報も簡単に扱うことが可能です。
 
-例えば、A-Frameで作られている[A-Painter](https://aframe.io/a-painter/)というアプリは、HTC ViveでリリースされているTiltBrushのようなお絵かきアプリを作ることも出来ます！
+例えば、A-Frameで作られている[A-Painter](https://aframe.io/a-painter/)というアプリは、HTC ViveでリリースされているTiltBrushのように、HTC Viveのコントローラを使ったお絵かきアプリをWebVRで実現しています！
+
+**A-Painter**
 
 ![A-paniter](https://blog.mozvr.com/content/images/2016/09/apainter_painting.gif)
-
-元々Three.jsベースでコンテンツを開発している場合、WebVR Boilerplateを利用すると簡単にVR対応が可能ですが、私は触ったことがないのでこちらも名前の紹介だけとさせていただきます。
 
 ### React VR
 React VRは先日の[Oculus Connectで発表された](https://techcrunch.com/2016/10/06/oculus-webvr/)Facebook謹製のライブラリで、現時点ではまだプレリリース状態です。
@@ -180,7 +182,7 @@ cd aframe-boilerplate && rm -rf .git && npm install
 
 この状態で`npm start`を実行すると、ブラウザが開きA-Frameアプリケーションが表示されます。
 
-![image](./images/aframe-hello.png)
+[f:id:DayBySay:20161217232848p:plain]
 
 これでローカルの開発環境は準備OKです。簡単！
 
@@ -193,7 +195,7 @@ cd aframe-boilerplate && rm -rf .git && npm install
 
 まずはGitHubに公開リポジトリを作ります。
 
-![image](./images/github.png)
+[f:id:DayBySay:20161217232938p:plain]
 
 今回は `https://github.com/DayBySay/my-aframe-application` として作成しました。
 
@@ -208,11 +210,13 @@ npm run deploy
 
 これでアプリケーション公開の準備が整いました。
 
-スマートフォンで `https://<UserName>.github.io/<RepositoryName/` を開き、右下のカードボードマークをタップします。
+スマートフォンで `https://<UserName>.github.io/<RepositoryName/` を開き、右下のカードボードマークをタップすると下記のような画面が現れると思います。
 
-![image](./images/aframe-hello-smaho.jpg)
+[f:id:DayBySay:20161217173409j:plain]
 
-これで開発 -> スマホで動作確認のサイクルを回せるようになりました！
+立体視になっていますね！しかもこの時点でヘッドトラッキングにも対応しています！簡単！
+
+さって、これで開発 -> スマホで動作確認のサイクルを回せるようになりました。
 
 ## A-Frameで文字を表示する
 せっかくなので少し実装をしてみましょう。
@@ -248,11 +252,11 @@ A-Frameでテキスト表示する方法はいくつかありますが、[公式
 
 スマートフォンでさきほどのURLを更新すると、下記のような表示になっていると思います。
 
-![image](./images/aframe-hello-text.jpg)
+[f:id:DayBySay:20161217182709j:plain]
 
 文字が表示できました！
 
-A-Frameで日本語を表示する場合は少し頑張る必要があるのですが、それについて[弊社ブログの記事](http://vr-lab.voyagegroup.com/entry/2016/11/16/122115)にまとめているので、ぜひご参照下さい！
+日本語を表示する場合は少し頑張る必要があるのですが、それについて[弊社ブログの記事](http://vr-lab.voyagegroup.com/entry/2016/11/16/122115)にまとめているので、ぜひご参照下さい！
 
 # まとめ
 これまで話したことをまとめたのが以下です。
@@ -269,4 +273,3 @@ A-Frameで日本語を表示する場合は少し頑張る必要があるので�
 ちなみにVOYAGE GROUPではVRアプリケーションを開発したいエンジニアやクリエイターの方を募集しておりますので、[Twitter](https://twitter.com/daybysay)などでお気軽にお声がけ下さい！
 
 それでは、よいVRアプリケーション開発ライフを！
-
