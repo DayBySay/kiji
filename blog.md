@@ -5,9 +5,7 @@ VRコンテンツ開発にトライしていく事業室を立ち上げ、ちょ
 
 この度、ご縁がありVR Insideさんに寄稿する機会を頂けたので、自分が勉強してきたことのアウトプットをしたいと思います。
 
-今回はVRに興味はあるがまだ触ったことは無いよ、というエンジニアの方向けに、開発者視点でVRコンテンツ開発と環境についてまとめました。
-
-この記事を読んだ方に、**VRアプリケーションの種類**と**開発環境の整え方**、を知って頂き、今後のVRコンテンツ開発に役立てて頂ければ幸いです！
+今回はVRに興味はあるがまだ触ったことは無いよ、というエンジニアの方向けに、今開発できる**VRアプリケーションの種類**と**開発の仕方**についてまとめました！
 
 # 目次
 
@@ -41,7 +39,7 @@ VRコンテンツ開発にトライしていく事業室を立ち上げ、ちょ
 3Dお絵かきアプリである TiltBrush や、VR空間で他のユーザと遊べる Toyboxなど、全身を使う動きのあるコンテンツとの相性が良いです。
 
 ## モバイルHMD
-![image](./images/2.png)
+![image](./images/2.jpg)
 
 モバイルHMDは、スマホ + HMDで利用できる端末で、ハイエンドHMDに比べるとインタラクションの種類が限定されてしまったり、扱えるポリゴン数が少ないなど、制約がおおいです。しかし、HMDさえ追加購入するだけで体験できるコンテンツを作れますので、体験までのハードルが低いです。
 
@@ -61,7 +59,7 @@ VRコンテンツ開発にトライしていく事業室を立ち上げ、ちょ
 これらHMDの特性をしっかり把握した上で、どこに対してコンテンツを提供していくか検討をするのが重要です。
 
 # アプリケーションの種類
-![image](./images/3.png)
+![image](./images/3.jpg)
 
 VRアプリケーションのタイプは2種類で、**ネイティブアプリケーション**と**Webアプリケーション**があります。
 
@@ -103,48 +101,116 @@ WebVR APIはHMDとカメラ、現在[W3Cにドラフトが出ている段階](ht
 ざっくりとした紹介をすると、簡単に使えて情報量が多いUnityと、リアルなグラフィックの作り込みが出来るUE4といった印象です。
 
 ## おすすめの開発環境と構築方法
-
 それぞれ他にも特性を持っておりますが、特にこだわりがなければ情報が豊富で有料のアセット購入が簡単に出来る**Unity**の利用をお勧めします。
+
+Unityの詳細に関しては[公式のイントロダクション](https://unity3d.com/jp/learn)をご参照下さい。
 
 # Webアプリケーションの開発環境
 ![image](./images/5.png)
-HTML + CSS + JSでの開発が可能です。お好みのエディタで開発が可能です。ちなみに筆者はVimで開発しています。
 
+既存の多くのコンテンツはネイティブで作られていますが、最近[モバイルのChromeベータ版がWebVR APIに対応をする](http://jp.techcrunch.com/2016/12/14/20161213google-introduces-webvr-api-to-latest-chrome-beta-on-android/)など、ブラウザでもVRアプリケーションを実行する環境が徐々に整備されています。
+
+WebVRアプリは、当然HTML + CSS + JSでの開発が可能です。
 ## おすすめの開発環境と構築方法
-とりあえずVR開発を始めるに当たって、筆者のお勧めは**A-Frame + Google Cardboardを使ったWebVR開発**です。
+とりあえずVR開発を始めるに当たって、筆者のお勧めは**A-Frame + A-Frame-Boilerplateを使ったWebVR開発**です。
 
-A-FrameはWebVRアプリケーション開発を支援するため、Mozilla VRチームが中心となって開発しているOSSのライブラリです。
+A-FrameはWebVRアプリケーション開発を支援するため、Mozilla VRチームが中心となって開発しているOSSのライブラリで、HTMLでVRアプリケーションを作成するためのオープンソースのWebVRフレームワークです。
 
 JSでの3Dのコンテンツ開発を可能とする**Three.js**をベースとし、ヘッドトラッキングや両眼立体視を簡単に実現できる機能などが追加されています。
 
 また、Oculus RiftやHTC ViveなどのハイエンドHMDや、ハンドコントローラなども簡単に扱えるようになっており、色々なプラットフォームに対応できるのも魅力の一つです。
 
-<iframe src="https://aframe.io/examples/showcase/helloworld/"></iframe>
+A-Frameの詳細に関しては[公式のイントロダクション](https://aframe.io/docs/0.4.0/introduction/)をご参照下さい。
 
-A-Frameの使い方に関しては[公式のチュートリアル](https://aframe.io/docs/0.3.0/introduction/getting-started.html)にきれいにまとまっているので、そちらをご参照下さい。
+# A-Frame Boilerplateを使って開発環境を構築する
 
-ちなみにA-Frameを用いたアプリ開発環境の構築は[A-Frame Boilerplate](https://github.com/DayBySay/aframe-boilerplate)の利用で簡単に実現できます。
+早速A-Frameを利用したVRアプリケーションの開発環境を整えていきましょう。
+
+`git`と`npm`を利用するので、それぞれ使えるようにインストールをしておいて下さい。
+
+まずは`A-Frame Boilerplate`をローカルに落としてきます。
 
 ```
-$ git clone https://github.com/aframevr/aframe-boilerplate.git
-$ cd aframe-boilerplate && rm -rf .git && npm install && npm start
-$ open http://localhost:3000/
+git clone https://github.com/aframevr/aframe-boilerplate.git
+cd aframe-boilerplate && rm -rf .git && npm install
 ```
 
-詳しい使い方は[弊社ブログの記事](http://vr-lab.voyagegroup.com/entry/2016/12/15/120544)にございますので、そちらをご参照下さい。
+この状態で`npm start`を実行すると、ブラウザが開きA-Frameアプリケーションが表示されます。
+
+これでローカルの開発環境は準備OKです。簡単！
+
+次に、スマホで動作確認できるようにアプリケーションをホスティングしましょう。
+
+特にこだわりがない & GitHubアカウントをお持ちの方は`GitHub Pages`にホスティングすればよいかと思います。
+
+`A-Frame Boilerplate`が、`GitHub Pages`へのホスティングに対応しているので、非常に簡単に公開できます！！
+
+まずはGitHubに公開リポジトリを作りましょう。
+
+今回は `https://github.com/DayBySay/my-aframe-application` として作成しました。
+
+```
+git init
+git remote add origin git@github.com:<UserName>/<RepositoryName>.git # <UserName> と <RepositoryName> は書き換えて下さい
+git add .
+npm run deploy
+```
+
+これでアプリケーション公開の準備が整いました。
+
+スマートフォンなどで `https://<UserName>.github.io/<RepositoryName/` を開き、右下のカードボードマークをタップします。
+
+これで開発 -> スマホで動作確認のサイクルを回せるようになりました！
+
+### A-Frameで文字を表示する
+せっかくなので少し実装をしてみましょう。
+
+今回は `Hello world` という文字を表示するところまでやってみたいと思います。
+
+A-Frameでテキスト表示する方法はいくつかありますが、[公式に推奨されている](https://aframe.io/docs/0.4.0/introduction/faq.html#how-do-i-display-text-in-a-frame)のは`Bitmap Font Text Component`を利用する方法です。
+
+ディレクトリ直下の`index.html`を下記のように変更して下さい。
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, World! - A-Frame</title>
+    <meta name="description" content="Hello, World! - A-Frame">
+    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+  </head>
+  <body>
+      <a-scene>
+      <a-entity position="-0.6 1.6 -2"
+        bmfont-text="color: black; text: Hello World;">
+      </a-entity>
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
+</html>
+```
+
+これをコミットし、また`npm deploy`でデプロイしましょう。
+
+スマートフォンでさきほどのURLを更新すると、下記のような表示になっていると思います。
+
+文字が表示できました！
+
+日本語を表示する場合は別の方法を取る必要があるのですが、それについて[弊社ブログの記事](http://vr-lab.voyagegroup.com/entry/2016/11/16/122115)にまとめているので、ぜひご参照下さい！
 
 # まとめ
 これまで話したことをまとめたのが以下です。
 
 * HMDによってコントロールとプラットフォームが違う
 * アプリケーションにはネイティブとWEBがある
-* それぞれ開発環境が違う
+* ネイティブアプリ開発はUnityで
+* WebVRアプリ開発はA-Frameで
 
 です！
 
-既存の多くのコンテンツはネイティブで作られていますが、最近[ChromeがWebVR対応をする]()など、WebVR API対応が進むに連れて
-
-VOYAGE GROUPではVRコンテンツを開発したいエンジニアやクリエイターの方を募集しておりますので、[Twitter](https://twitter.com/daybysay)などでお気軽にお声がけ下さい！
+ちなみにVOYAGE GROUPではVRコンテンツを開発したいエンジニアやクリエイターの方を募集しておりますので、[Twitter](https://twitter.com/daybysay)などでお気軽にお声がけ下さい！
 
 それでは、よいVRコンテンツ開発ライフを！
 
