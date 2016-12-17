@@ -170,6 +170,15 @@ WebVRアプリ開発を始めるに当たって、一番お勧めしたいのは
 
 今回は`git`と`npm`を利用するので、それらの環境を用意して下さい。
 
+## A-Frame Boilerplateについて
+`A-Frame Boilerplate`は、次の3つの機能を備えています。
+
+* 最新のA-FrameにリンクされたHTMLファイル
+* ローカルの開発サーバ
+* [Github Pages](https://pages.github.com/)に簡単にデプロイする機能
+
+要はA-Frameを利用したアプリの開発環境を簡単に整えられる仕組みですね。
+
 ## ローカル開発環境の準備
 まずは`A-Frame Boilerplate`をローカルにクローンします。
 
@@ -189,7 +198,7 @@ cd aframe-boilerplate && rm -rf .git && npm install
 ## スマートフォンで動作確認するための環境準備
 特にこだわりがない & GitHubアカウントをお持ちの方は`GitHub Pages`にホスティングすればよいかと思います。
 
-`A-Frame Boilerplate`が、`GitHub Pages`へのホスティングをサポートしているので、そちらを利用しましょう。
+先述の通り、`A-Frame Boilerplate`が`GitHub Pages`へのホスティングをサポートしているので、そちらを利用しましょう。
 
 まずはGitHubに公開リポジトリを作ります。
 
